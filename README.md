@@ -6,7 +6,9 @@
 
 ## Содержание  
 
-- [Технологии](#технологии)  
+- [Технологии](#технологии)
+- [github](#github) 
+- [venv](#github)   
 - [Pytorch](#Pytorch)  
 
 ------------------------  
@@ -21,4 +23,11 @@
 - [pythonanywhere](https://www.pythonanywhere.com/)
 -------------------------------------------
 
+## github
+- [github](https://github.com/MALeyman/dev-quickstart/blob/main/git_hub.ipynb)   - работа с gitHub
+
+## venv
+- [venv](https://github.com/MALeyman/dev-quickstart/blob/main/venv.ipynb)  -  работа с виртуальным окружением
+
 ## Pytorch  
+- [pytorch](https://github.com/MALeyman/dev-quickstart/blob/main/pytorch.ipynb)  - работа с Pytorch
