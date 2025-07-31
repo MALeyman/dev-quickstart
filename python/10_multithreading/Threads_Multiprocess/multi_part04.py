@@ -1,0 +1,36 @@
+import multiprocessing
+import time
+import logging
+
+def print_proc(mes):
+    name = multiprocessing.current_process().name
+    print(f'Process {name}: {mes}')
+    
+def process_function(x, y):
+    name = multiprocessing.current_process().name
+    print_proc('starting')
+    time.sleep(0.1)
+    print_proc('finishing')
+    return x + y
+
+if __name__ == "__main__":
+    multiprocessing.log_to_stderr()
+    logger = multiprocessing.get_logger()
+    logger.setLevel(logging.INFO)
+    num_cores = multiprocessing.cpu_count()
+    num_proc = num_cores - 1 #num_cores - 1 # not counting Main
+    print_proc(f'number of cores = {num_cores}')
+    
+    xit = [(i, i + 1) for i in range(1, num_proc + 1)] # двойной цикл, по числу переменных
+    
+    print_proc('before creating pool')
+    
+    pool = multiprocessing.Pool(processes=num_proc)
+    # объекты передаютс по значению, pickle - сериализация
+    # __getstate__, __setstate__
+    
+    print_proc('before running processes')
+    
+    res = pool.starmap(process_function, xit) # аргументов >1
+    print_proc(f'result of processes - {res}')
+    print_proc('all done')
